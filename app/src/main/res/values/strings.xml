@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">Barber UPC</string>
+    <string name="username_hint">Username</string>
+    <string name="password_hint">Password</string>
+    <string name="log_in_button_title">Log In</string>
+
+    <string name="generic_error_http_request">We couldn\'t load your request, please try again...</string>
+    <string name="wrong_credentials">Wrong credentials, please try again</string>
+
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_reservation">Reservation</string>
+    <string name="title_hair_cuts">Hair Cut</string>
+    <string name="title_profile">Profile</string>
+    <string name="barber_title">Barber Shop</string>
 </resources>
