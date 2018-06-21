@@ -1,8 +1,6 @@
 package com.barberia.upc.barberupc;
 
-import android.app.ProgressDialog;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -128,8 +126,9 @@ public class LoginActivity extends AppCompatActivity implements Validator.Valida
         } else {
             session.setToken(token);
 
-            Intent intent = new Intent(this, DashboardActivity.class);
+            Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
+            finish();
         }
     }
 
