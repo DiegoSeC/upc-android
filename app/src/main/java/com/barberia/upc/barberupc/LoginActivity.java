@@ -10,8 +10,8 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.barberia.upc.com.barberia.upc.util.Session;
-import com.barberia.upc.rest.Authentication;
+import com.barberia.upc.util.Session;
+import com.barberia.upc.models.Authentication;
 import com.barberia.upc.rest.AuthenticationService;
 import com.mobsandgeeks.saripaar.ValidationError;
 import com.mobsandgeeks.saripaar.Validator;
@@ -76,23 +76,6 @@ public class LoginActivity extends AppCompatActivity implements Validator.Valida
             @Override
             public void onClick(View v) {
                 validator.validate();
-                progressBar.setVisibility(View.VISIBLE);
-
-                String username = usernameInput.getText().toString();
-                String password = passwordInput.getText().toString();
-
-                Log.d("USERNAME", username);
-                Log.d("PASSWORD", password);
-
-                Authentication auth = new Authentication(username, password);
-
-                Call<Authentication> call = authService.auth(auth);
-                call.enqueue(LoginActivity.this);
-
-                usernameInput.setEnabled(false);
-                passwordInput.setEnabled(false);
-
-                loginButton.setVisibility(View.GONE);
             }
         });
     }
@@ -100,6 +83,23 @@ public class LoginActivity extends AppCompatActivity implements Validator.Valida
     @Override
     public void onValidationSucceeded() {
         Log.d("VALIDATION", "Validation passed");
+        progressBar.setVisibility(View.VISIBLE);
+
+        String username = usernameInput.getText().toString();
+        String password = passwordInput.getText().toString();
+
+        Log.d("USERNAME", username);
+        Log.d("PASSWORD", password);
+
+        Authentication auth = new Authentication(username, password);
+
+        Call<Authentication> call = authService.auth(auth);
+        call.enqueue(LoginActivity.this);
+
+        usernameInput.setEnabled(false);
+        passwordInput.setEnabled(false);
+
+        loginButton.setVisibility(View.GONE);
     }
 
     @Override

@@ -1,7 +1,5 @@
-package com.barberia.upc.barberupc;
+package com.barberia.upc.fragments;
 
-import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -10,9 +8,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.barberia.upc.com.barberia.upc.util.Session;
-import com.barberia.upc.com.barberia.upc.util.TokenInterceptor;
-import com.barberia.upc.rest.Reservation;
+import com.barberia.upc.barberupc.R;
+import com.barberia.upc.util.Session;
+import com.barberia.upc.util.TokenInterceptor;
+import com.barberia.upc.models.Reservation;
 import com.barberia.upc.rest.ReservationService;
 
 import java.util.List;

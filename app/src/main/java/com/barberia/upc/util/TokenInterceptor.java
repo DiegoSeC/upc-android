@@ -1,4 +1,4 @@
-package com.barberia.upc.com.barberia.upc.util;
+package com.barberia.upc.util;
 
 import java.io.IOException;
 

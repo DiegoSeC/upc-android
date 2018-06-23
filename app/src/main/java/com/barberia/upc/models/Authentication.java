@@ -1,4 +1,4 @@
-package com.barberia.upc.rest;
+package com.barberia.upc.models;
 
 public class Authentication {
     private String username;

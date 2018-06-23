@@ -10,6 +10,11 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 
+import com.barberia.upc.fragments.DashboardFragment;
+import com.barberia.upc.fragments.HairCutFragment;
+import com.barberia.upc.fragments.ProfileFragment;
+import com.barberia.upc.fragments.ReservationFragment;
+
 public class MainActivity extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
