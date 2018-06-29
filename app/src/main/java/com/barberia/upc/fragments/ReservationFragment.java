@@ -1,6 +1,7 @@
 package com.barberia.upc.fragments;
 
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -35,6 +36,8 @@ public class ReservationFragment extends Fragment {
 
     BarberService barberService;
 
+    Context context;
+
 
     public ReservationFragment() {
         // Required empty public constructor
@@ -46,8 +49,9 @@ public class ReservationFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_reservation, container, false);
+        context = view.getContext();
 
-        session = new Session(view.getContext());
+        session = new Session(context);
         String token = session.getToken();
 
         TokenInterceptor tokenInterceptor = new TokenInterceptor(token);
