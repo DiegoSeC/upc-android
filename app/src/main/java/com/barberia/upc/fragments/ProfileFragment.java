@@ -10,7 +10,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -103,7 +102,7 @@ public class ProfileFragment extends Fragment {
         creditRecyclerView = view.findViewById(R.id.credit_card_recycler_view);
 
         creditCards = new ArrayList<>();
-        creditCardAdapter = new CreditCardAdapter(creditCards);
+        creditCardAdapter = new CreditCardAdapter(creditCards, view.getContext());
         linearLayoutManager = new LinearLayoutManager(view.getContext());
 
         creditRecyclerView.setAdapter(creditCardAdapter);

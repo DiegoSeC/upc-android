@@ -27,4 +27,8 @@
     <string name="credit_card_list">Credit Card List</string>
     <string name="add_credit_card_button">Add Credit Card</string>
     <string name="credit_card_empty">NO CREDIT CARD FOUND</string>
+    <string name="credit_card_number">Credit Card Number</string>
+    <string name="exp_date">0101</string>
+    <string name="ccv">CCV</string>
+    <string name="credit_card_name_edit_text">Credit card Name</string>
 </resources>
