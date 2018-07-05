@@ -4,17 +4,22 @@ package com.barberia.upc.fragments;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.barberia.upc.adapters.BarberAdapter;
 import com.barberia.upc.barberupc.R;
+import com.barberia.upc.decoration.SimpleDividerItemDecoration;
 import com.barberia.upc.models.Barber;
 import com.barberia.upc.rest.BarberService;
 import com.barberia.upc.util.Session;
 import com.barberia.upc.util.TokenInterceptor;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import okhttp3.OkHttpClient;
@@ -38,6 +43,12 @@ public class ReservationFragment extends Fragment {
 
     Context context;
 
+    List<Barber> barberList;
+
+    BarberAdapter barberAdapter;
+    LinearLayoutManager linearLayoutManager;
+    RecyclerView barberRecyclerView;
+
 
     public ReservationFragment() {
         // Required empty public constructor
@@ -53,6 +64,16 @@ public class ReservationFragment extends Fragment {
 
         session = new Session(context);
         String token = session.getToken();
+
+        barberList = new ArrayList<>();
+
+        barberRecyclerView = view.findViewById(R.id.barber_recycler_view);
+        linearLayoutManager = new LinearLayoutManager(view.getContext());
+        barberAdapter = new BarberAdapter(barberList);
+
+        barberRecyclerView.setLayoutManager(linearLayoutManager);
+        barberRecyclerView.setAdapter(barberAdapter);
+        barberRecyclerView.addItemDecoration(new SimpleDividerItemDecoration(context));
 
         TokenInterceptor tokenInterceptor = new TokenInterceptor(token);
         OkHttpClient client = tokenInterceptor.makeClient();
@@ -79,8 +100,9 @@ public class ReservationFragment extends Fragment {
         return new Callback<List<Barber>>() {
             @Override
             public void onResponse(Call<List<Barber>> call, Response<List<Barber>> response) {
-                List<Barber> barbers = response.body();
-                Log.d("BABERS", barbers.get(0).getName());
+                barberList = response.body();
+                barberAdapter.setBarbers(barberList);
+                barberAdapter.notifyDataSetChanged();
             }
 
             @Override

@@ -31,4 +31,5 @@
     <string name="exp_date">0101</string>
     <string name="ccv">CCV</string>
     <string name="credit_card_name_edit_text">Credit card Name</string>
+    <string name="barber_name_default">Barber Name</string>
 </resources>

@@ -23,7 +23,6 @@ public class CreditCardAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
 
     private static final int TYPE_HEADER = 0;
     private static final int TYPE_ITEM = 1;
-    private static final int TYPE_EMPTY = -1;
 
     private List<CreditCard> creditCards;
     private Context context;

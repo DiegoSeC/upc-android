@@ -87,7 +87,7 @@ public class CreditCardFragment extends Fragment implements ValidationListener {
 
         CreditCard creditCard = new CreditCard(_name, _number, _ccv, "VISA", _exp);
 
-        
+
     }
 
     @Override
