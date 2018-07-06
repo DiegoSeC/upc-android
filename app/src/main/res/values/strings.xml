@@ -32,4 +32,6 @@
     <string name="ccv">CCV</string>
     <string name="credit_card_name_edit_text">Credit card Name</string>
     <string name="barber_name_default">Barber Name</string>
+    <string name="hair_cut_name_default">Hair Cut Name</string>
+    <string name="barber_description_info">BARBER description info</string>
 </resources>

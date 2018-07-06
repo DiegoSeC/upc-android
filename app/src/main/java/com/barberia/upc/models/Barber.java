@@ -1,6 +1,8 @@
 package com.barberia.upc.models;
 
-public class Barber {
+import java.io.Serializable;
+
+public class Barber implements Serializable {
     private int id;
     private String name;
     private String picture;

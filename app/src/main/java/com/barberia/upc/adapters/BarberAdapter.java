@@ -2,14 +2,18 @@ package com.barberia.upc.adapters;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.barberia.upc.barberupc.MainActivity;
 import com.barberia.upc.barberupc.R;
+import com.barberia.upc.fragments.BarberFragment;
 import com.barberia.upc.models.Barber;
 import com.bumptech.glide.Glide;
 
@@ -52,8 +56,10 @@ public class BarberAdapter extends RecyclerView.Adapter<BarberAdapter.ViewHolder
 
         ImageView picBarber;
         TextView nameBarber;
+        LinearLayout barberLayout;
 
         Context context;
+        BarberFragment barberFragment;
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -62,14 +68,26 @@ public class BarberAdapter extends RecyclerView.Adapter<BarberAdapter.ViewHolder
 
             picBarber = itemView.findViewById(R.id.barber_pic_image_view);
             nameBarber = itemView.findViewById(R.id.barber_name_text_view);
+            barberLayout = itemView.findViewById(R.id.barber_layout);
         }
 
-        public void updateBarberItem(Barber barber) {
+        public void updateBarberItem(final Barber barber) {
             Glide.with(context)
                     .load(barber.getPicture())
                     .into(picBarber);
 
             nameBarber.setText(barber.getName());
+
+            barberLayout.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    barberFragment = BarberFragment.newInstance(barber);
+                    FragmentTransaction fragmentTransaction = ((MainActivity) v.getContext()).getSupportFragmentManager().beginTransaction();
+                    fragmentTransaction.replace(R.id.frame_layout_view, barberFragment);
+                    fragmentTransaction.addToBackStack(null);
+                    fragmentTransaction.commit();
+                }
+            });
         }
     }
 }

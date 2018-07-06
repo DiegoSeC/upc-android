@@ -3,26 +3,25 @@
     android:layout_width="match_parent"
     android:orientation="horizontal"
     android:layout_gravity="center"
-    android:id="@+id/barber_layout"
+    android:id="@+id/hair_cut_layout"
     android:layout_height="wrap_content">
 
     <ImageView
-        android:id="@+id/barber_pic_image_view"
-        android:layout_width="60dp"
-        android:layout_weight="1"
+        android:id="@+id/hair_cut_picture"
+        android:layout_width="50dp"
         android:src="@drawable/ic_person_black_24dp"
-        android:layout_height="60dp" />
+        android:layout_weight="1"
+        android:layout_marginEnd="10dp"
+        android:layout_height="50dp" />
 
     <TextView
-        android:id="@+id/barber_name_text_view"
-        android:layout_weight="1"
-        android:layout_marginStart="10dp"
-        android:layout_gravity="center"
+        android:id="@+id/hair_cut_name"
+        android:layout_width="match_parent"
+        android:text="@string/hair_cut_name_default"
         android:textStyle="bold"
         android:textSize="20dp"
-        android:text="@string/barber_name_default"
-        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_gravity="center"
         android:layout_height="wrap_content" />
-
 
 </LinearLayout>

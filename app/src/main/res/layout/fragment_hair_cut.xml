@@ -3,12 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingTop="5dp"
+    android:paddingStart="10dp"
+    android:paddingEnd="10dp"
+    android:paddingBottom="10dp"
     tools:context="com.barberia.upc.fragments.HairCutFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/hair_cut_recycler"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Hair Cut" />
+        android:layout_height="match_parent" />
 
 </FrameLayout>
