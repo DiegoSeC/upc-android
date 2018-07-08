@@ -1,28 +1,57 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context="com.barberia.upc.fragments.BarberFragment">
 
-    <TextView
-        android:id="@+id/barber_name_info"
-        android:text="@string/barber_name_default"
-        android:paddingStart="10dp"
-        android:paddingEnd="10dp"
-        android:layout_marginTop="10dp"
-        android:textSize="20dp"
-        android:textStyle="bold"
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/barber_description_info"
-        android:layout_width="match_parent"
-        android:layout_marginTop="10dp"
-        android:paddingStart="10dp"
-        android:paddingEnd="10dp"
-        android:text="@string/barber_description_info"
-        android:layout_height="wrap_content" />
+        <ImageView
+            android:id="@+id/barber_picture_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
-</LinearLayout>
+        <TextView
+            android:id="@+id/barber_name_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:paddingEnd="10dp"
+            android:paddingStart="10dp"
+            android:text="@string/barber_name_default"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/barber_description_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:paddingEnd="10dp"
+            android:paddingStart="10dp"
+            android:text="@string/barber_description_info" />
+
+        <LinearLayout
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:id="@+id/points_layout"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:id="@+id/reservation_button"
+            android:text="@string/book_an_appointment_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+</ScrollView>

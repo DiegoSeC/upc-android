@@ -34,4 +34,5 @@
     <string name="barber_name_default">Barber Name</string>
     <string name="hair_cut_name_default">Hair Cut Name</string>
     <string name="barber_description_info">BARBER description info</string>
+    <string name="book_an_appointment_button">Book an Appointment</string>
 </resources>
