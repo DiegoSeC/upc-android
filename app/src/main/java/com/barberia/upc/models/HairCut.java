@@ -4,11 +4,21 @@ public class HairCut {
     private String name;
     private String description;
     private String picture;
+    private int rank;
 
-    public HairCut(String name, String description, String picture) {
+    public int getRank() {
+        return rank;
+    }
+
+    public void setRank(int rank) {
+        this.rank = rank;
+    }
+
+    public HairCut(String name, String description, String picture, int rank) {
         this.name = name;
         this.description = description;
         this.picture = picture;
+        this.rank = rank;
     }
 
     public String getName() {
