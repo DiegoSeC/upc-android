@@ -54,9 +54,12 @@ public class HairCutFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_hair_cut, container, false);
+
         context = view.getContext();
+
         session = new Session(context);
         String token = session.getToken();
+
         hairCutList = new ArrayList<>();
 
         hairCutAdapter = new HairCutAdapter(hairCutList);
@@ -67,6 +70,7 @@ public class HairCutFragment extends Fragment {
         hairCutRecyclerView.setAdapter(hairCutAdapter);
         hairCutRecyclerView.setLayoutManager(linearLayoutManager);
         hairCutRecyclerView.addItemDecoration(new SimpleDividerItemDecoration(view.getContext()));
+
         TokenInterceptor tokenInterceptor = new TokenInterceptor(token);
         OkHttpClient client = tokenInterceptor.makeClient();
 
@@ -75,8 +79,11 @@ public class HairCutFragment extends Fragment {
                 .client(client)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
+
         hairCutService = retrofit.create(HairCutService.class);
+
         getHairCuts();
+
         return view;
     }
 
