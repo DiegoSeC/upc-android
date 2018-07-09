@@ -35,4 +35,8 @@
     <string name="hair_cut_name_default">Hair Cut Name</string>
     <string name="barber_description_info">BARBER description info</string>
     <string name="book_an_appointment_button">Book an Appointment</string>
+    <string name="payment_title">Payment</string>
+    <string name="credit_card_error_message">We couldn\'t save your credit card, try again</string>
+    <string name="question">Are you sure to create this appointment?</string>
+    <string name="appointment_created">Appointment created</string>
 </resources>

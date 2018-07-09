@@ -4,14 +4,17 @@ package com.barberia.upc.fragments;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.barberia.upc.barberupc.MainActivity;
 import com.barberia.upc.barberupc.R;
 import com.barberia.upc.models.Barber;
 import com.bumptech.glide.Glide;
@@ -28,6 +31,7 @@ public class BarberFragment extends Fragment {
     TextView barberName;
     TextView barberDescription;
     ImageView barberPicture;
+    Button reservation;
 
     LinearLayout pointsLayout;
     Context context;
@@ -61,6 +65,7 @@ public class BarberFragment extends Fragment {
         barberDescription = view.findViewById(R.id.barber_description_info);
         barberPicture = view.findViewById(R.id.barber_picture_info);
         pointsLayout = view.findViewById(R.id.points_layout);
+        reservation = view.findViewById(R.id.reservation_button);
 
         barberName.setText(barber.getName());
         barberDescription.setText(barber.getBio());
@@ -70,6 +75,8 @@ public class BarberFragment extends Fragment {
                 .into(barberPicture);
 
         setPointsImages();
+
+        reservation.setOnClickListener(goToAppointment());
 
         return view;
     }
@@ -87,6 +94,22 @@ public class BarberFragment extends Fragment {
 
             pointsLayout.addView(star);
         }
+    }
+
+    public View.OnClickListener goToAppointment() {
+        return new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AppointmentFragment appointmentFragment = new AppointmentFragment();
+                FragmentTransaction fragmentTransaction = ((MainActivity) v.getContext())
+                        .getSupportFragmentManager().beginTransaction();
+
+                fragmentTransaction.replace(R.id.frame_layout_view, appointmentFragment);
+                fragmentTransaction.addToBackStack(null);
+
+                fragmentTransaction.commit();
+            }
+        };
     }
 
 }
