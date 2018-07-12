@@ -66,7 +66,6 @@ public class ProfileFragment extends Fragment {
 
     List<CreditCard> creditCards;
 
-
     public ProfileFragment() {
         // Required empty public constructor
     }
