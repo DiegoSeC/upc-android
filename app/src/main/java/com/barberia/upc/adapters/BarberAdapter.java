@@ -53,22 +53,21 @@ public class BarberAdapter extends RecyclerView.Adapter<BarberAdapter.ViewHolder
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-
         ImageView picBarber;
         TextView nameBarber;
+        Context context;
         LinearLayout barberLayout;
 
-        Context context;
         BarberFragment barberFragment;
 
         public ViewHolder(View itemView) {
             super(itemView);
 
-            context = itemView.getContext();
-
             picBarber = itemView.findViewById(R.id.barber_pic_image_view);
             nameBarber = itemView.findViewById(R.id.barber_name_text_view);
             barberLayout = itemView.findViewById(R.id.barber_layout);
+
+            context = itemView.getContext();
         }
 
         public void updateBarberItem(final Barber barber) {

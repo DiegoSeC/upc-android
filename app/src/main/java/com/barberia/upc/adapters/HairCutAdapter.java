@@ -11,6 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.barberia.upc.barberupc.R;
+import com.barberia.upc.fragments.HairCutFragment;
 import com.barberia.upc.models.HairCut;
 import com.bumptech.glide.Glide;
 
@@ -54,6 +55,7 @@ public class HairCutAdapter extends RecyclerView.Adapter<HairCutAdapter.ViewHold
         TextView hairCutName;
         Context context;
         LinearLayout hairCutLayout;
+
 
         public ViewHolder(View itemView) {
             super(itemView);
